@@ -6,6 +6,10 @@ import { v4 as uuidv4 } from 'uuid'
 import { playerScoreAdded } from './playersListSlice'
 import { calcTotalPoints } from '../../utility/util'
 
+import doneIcon from '../../images/done_black_48dp.svg'
+import closeIcon from '../../images/close_black_48dp.svg'
+import addIcon from '../../images/add_black_48dp.svg'
+
 export const AddScore = ({ isOpen, onRequestClose, player }) => {
   const [score, setScore] = useState('')
   const dispatch = useDispatch()
@@ -62,6 +66,7 @@ export const AddScore = ({ isOpen, onRequestClose, player }) => {
       <div className="add-score-container">
         <p>
           {player.playerName}
+
         </p>
         <p>
           Current score: {calcTotalPoints(player.playerScores)}
@@ -69,13 +74,19 @@ export const AddScore = ({ isOpen, onRequestClose, player }) => {
         <form onSubmit={handleSubmit}>
 
           <div className="inputs-container">
-            <input type="number" value={score} onChange={handleChange} />
-            <button type="button" onClick={handleAdd}>+</button>
+            <input type="number" autoFocus value={score} onChange={handleChange} />
+            <button type="button" onClick={handleAdd} className="button button__icon">
+              <img src={addIcon} alt="add" />
+            </button>
           </div>
 
           <div className="buttons-container">
-            <button type="button" onClick={handleCloseModal}>X</button>
-            <input type="submit" value="Submit" />
+            <button type="button" onClick={handleCloseModal} className="button button__icon">
+              <img src={closeIcon} alt="close" />
+            </button>
+            <button type="submit" onClick={handleSubmit} className="button button__icon">
+              <img src={doneIcon} alt="done" />
+            </button>
           </div>
 
         </form>
