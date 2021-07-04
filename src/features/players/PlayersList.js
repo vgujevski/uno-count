@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { AddEditPlayer } from './AddEditPlayer'
 import { Player } from './Player'
 
+import plusIcon from '../../images/add_white_48dp.svg'
+
 export const PlayersList = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -23,8 +25,13 @@ export const PlayersList = () => {
 
   return (
     <div className="list">
-      <div>
-        <button className="button button__add_player" onClick={handleAddPlayer}>Add player</button>
+      <div className="top_bar">
+        <div className="top_bar-content">
+          <button className="button button__add-player" onClick={handleAddPlayer}>
+            <img src={plusIcon} alt="add player" />
+          </button>
+        </div>
+
       </div>
       {
         players.length === 0 ? (
@@ -32,14 +39,14 @@ export const PlayersList = () => {
             <span>no players</span>
           </div>
         ) : (
-            players.map((player) => (
-              <Player key={player.playerId} {...player} />
-            ))
-          )
+          players.map((player) => (
+            <Player key={player.playerId} {...player} />
+          ))
+        )
       }
       <AddEditPlayer
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}/>
+        onRequestClose={closeModal} />
     </div>
   )
 }

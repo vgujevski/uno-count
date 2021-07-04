@@ -1,0 +1,25 @@
+.top_bar {
+  width: 100%;
+  background: $bg-dark;
+  height: 5rem;
+
+  .top_bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+  }
+
+  .top_bar-name {
+    color: $text-light-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  .top_bar-blank {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+  }
+}

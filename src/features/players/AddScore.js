@@ -59,19 +59,28 @@ export const AddScore = ({ isOpen, onRequestClose, player }) => {
       isOpen={isOpen}
       onRequestClose={handleCloseModal}>
 
-      <div>
-        Add score for: {player.playerName}
-      </div>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <div className="add-score-container">
+        <p>
+          {player.playerName}
+        </p>
+        <p>
           Current score: {calcTotalPoints(player.playerScores)}
-          <input type="number" value={score} onChange={handleChange} />
+        </p>
+        <form onSubmit={handleSubmit}>
 
-        </label>
-        <button type="button" onClick={handleAdd}>+</button>
-        <button type="button" onClick={handleCloseModal}>X</button>
-        <input type="submit" value="Submit" />
-      </form>
+          <div className="inputs-container">
+            <input type="number" value={score} onChange={handleChange} />
+            <button type="button" onClick={handleAdd}>+</button>
+          </div>
+
+          <div className="buttons-container">
+            <button type="button" onClick={handleCloseModal}>X</button>
+            <input type="submit" value="Submit" />
+          </div>
+
+        </form>
+      </div>
+
     </Modal>
   )
 }

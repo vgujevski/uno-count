@@ -26,7 +26,7 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerName])
 
-  //FIXMEshould not be able to submit empty input field adter initial render 
+  //FIXME should not be able to submit empty input field adter initial render 
 
   const handleSubmit = (event) => {
     validateForm()

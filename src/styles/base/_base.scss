@@ -12,6 +12,7 @@ body {
   margin: 0;
   font-size: $m-size;
   line-height: 1.6;
+  background: $bg-light;
 }
 
 h1 {
@@ -32,8 +33,6 @@ h3 {
 button {
   cursor: pointer;
 }
-
-
 
 select {
   cursor: pointer;

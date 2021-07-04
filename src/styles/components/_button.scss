@@ -2,8 +2,26 @@
   text-decoration:none;
   border-radius: 0.1rem;
   border-width: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  height: 40px;
+  width: 40px;
+
+  img {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
 }
 
-.button__add_player {
-  margin: 0 auto;
+.button__add-player {
+  display: block;
+  margin: auto;
+}
+
+.button__icon {
+  margin-left: 1rem;
 }

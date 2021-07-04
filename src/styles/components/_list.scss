@@ -1,24 +1,41 @@
 .list {
-  background: azure;
   align-items: center;
   flex-direction: column;
   display: flex;
 }
 
 .list__item {
+  border-radius: 3px;
+  border: 2px solid rgb(182, 180, 180);
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: space-between;
+}
+
+.list__item-container {
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 0.2rem;
-  margin: 0.2rem;
   justify-content: space-between;
-  background-color: burlywood;
+  align-items: center;
+}
+
+.list__item-add_button {
+  height: 100%;
+  width: 15%;
+  img {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .list__item-name {
-
+  margin-left: 1rem;
 }
 
 .list__item-score {
-
+  margin-right: 1rem;
 }

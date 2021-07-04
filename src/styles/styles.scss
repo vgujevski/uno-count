@@ -1,7 +1,10 @@
 @import './base/settings';
 @import './base/base';
 
-@import './components/content-container';
 @import './components/game-session';
 @import './components/button';
 @import './components/list';
+
+@import './utility/top-bar';
+@import './utility/content-container';
+@import './components/modal-add-score';
