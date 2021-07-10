@@ -74,15 +74,22 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={handleCloseModal}>
+      onRequestClose={handleCloseModal}
+      closeTimeoutMS={200}
+      className="modal">
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+
+      <div className="modal-container">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Name:
             <input type="text" value={playerName} onChange={handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+
+      </div>
+
       {errorMessage && <div>Error: {errorMessage}</div>}
     </Modal>
   )

@@ -65,7 +65,7 @@ export const AddScore = ({ isOpen, onRequestClose, player }) => {
       closeTimeoutMS={200}
       className="modal">
 
-      <div className="add-score-container">
+      <div className="modal-container">
         <p className="player-name">
           {player.playerName}
         </p>
