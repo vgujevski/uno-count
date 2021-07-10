@@ -5,6 +5,10 @@ import { useDispatch } from 'react-redux'
 
 import { playerAdded } from './playersListSlice'
 
+import personIcon from '../../images/person_black_48dp.svg'
+import doneIcon from '../../images/done_black_48dp.svg'
+import closeIcon from '../../images/close_black_48dp.svg'
+
 
 export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
   const [playerName, setPlayerName] = useState('')
@@ -80,12 +84,23 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
 
 
       <div className="modal-container">
+
+        <img src={personIcon} alt="person" />
+
         <form onSubmit={handleSubmit}>
           <label>
-            Name:
-            <input type="text" value={playerName} onChange={handleChange} />
+            <input type="text" autoFocus value={playerName} onChange={handleChange} placeholder="enter name" />
           </label>
-          <input type="submit" value="Submit" />
+
+          <div className="buttons-container">
+            <button type="button" onClick={handleCloseModal} className="button button__icon">
+              <img src={closeIcon} alt="close" />
+            </button>
+            <button type="submit" onClick={handleSubmit} className="button button__icon">
+              <img src={doneIcon} alt="done" />
+            </button>
+          </div>
+
         </form>
 
       </div>
