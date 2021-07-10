@@ -61,15 +61,16 @@ export const AddScore = ({ isOpen, onRequestClose, player }) => {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={handleCloseModal}>
+      onRequestClose={handleCloseModal}
+      closeTimeoutMS={200}
+      className="modal">
 
       <div className="add-score-container">
-        <p>
+        <p className="player-name">
           {player.playerName}
-
         </p>
-        <p>
-          Current score: {calcTotalPoints(player.playerScores)}
+        <p className="player-score">
+          {calcTotalPoints(player.playerScores)}
         </p>
         <form onSubmit={handleSubmit}>
 

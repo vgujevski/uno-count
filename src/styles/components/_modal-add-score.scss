@@ -1,3 +1,5 @@
+
+
 .add-score-container {
   display: flex;
   flex-direction: column;
@@ -14,5 +16,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+  .player-name {
+    font-size: 3rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    word-break: break-all;
+  }
+  .player-score {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
   }
 }
