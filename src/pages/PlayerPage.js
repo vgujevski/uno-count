@@ -40,11 +40,7 @@ export const PlayerPage = () => {
             <img src={deleteIcon} alt="remove player" />
           </div>
         </div>
-
       </div>
-      player page,
-      show playe score
-      {playerId}
       <ScoresList playerId={playerId} />
     </div>
   )

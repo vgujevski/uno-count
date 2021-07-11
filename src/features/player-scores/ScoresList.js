@@ -9,8 +9,7 @@ export const ScoresList = ({ playerId }) => {
 
   return (
     
-      <div>
-        list of player scores
+      <div className="list">
       {
           scores.length === 0 ? (
             <div>

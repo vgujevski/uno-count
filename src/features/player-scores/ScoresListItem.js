@@ -13,7 +13,7 @@ export const ScoresListItem = (score) => {
   }
 
   return (
-    <div>
+    <div className="list__item">
       <span>{score.amount}</span>
       <button onClick={handleDeleteScoreClick}>x</button>
     </div>
