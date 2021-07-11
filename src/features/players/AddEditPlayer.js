@@ -30,11 +30,10 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerName])
 
-  //FIXME should not be able to submit empty input field adter initial render 
-
   const handleSubmit = (event) => {
-    validateForm()
-    if (!errorMessage) {
+    event.preventDefault();
+
+    if (validateForm()) {
       addPlayer(
         {
           playerId: uuidv4(),
@@ -43,8 +42,9 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
         })
       handleCloseModal()
       initialRender.current = true
+    } else {
+      console.log('form not valid');
     }
-    event.preventDefault();
   }
 
   const addPlayer = (player) => {
@@ -65,14 +65,19 @@ export const AddEditPlayer = ({ isOpen, onRequestClose }) => {
   }
 
   const validateForm = () => {
-    console.log('validateForm called');
-    if (0 < playerName.length && playerName.length <= 10) {
-      setErrorMessage('')
-    } else if (playerName.length === 0) {
+    let formIsValid = true
+
+    if (playerName.length === 0) {
       setErrorMessage('please enter name')
+      formIsValid = false
     } else if (playerName.length > 10) {
       setErrorMessage('name should be less than 10 characters')
+      formIsValid = false
+    } else {
+      formIsValid = true
+      setErrorMessage('')
     }
+    return formIsValid
   }
 
   return (
