@@ -1,27 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = [
-  {
-    playerId: '1',
-    playerName: 'Pepe',
-    playerScores: []
-  },
-  {
-    playerId: '2',
-    playerName: 'Jumba',
-    playerScores: []
-  },
-  {
-    playerId: '3',
-    playerName: 'Dulin',
-    playerScores: []
-  },
-  {
-    playerId: '4',
-    playerName: 'Gondo',
-    playerScores: []
-  },
-]
+const initialState = []
 
 const playersSlice = createSlice({
   name: 'players',

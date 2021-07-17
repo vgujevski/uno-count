@@ -6,6 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/styles.scss'
 import store from './redux-store/configureStore'
+import { saveToLocalStorage } from './utility/util'
+
+store.subscribe(() => {
+  console.log('state changed');
+  saveToLocalStorage(store.getState())
+})
 
 ReactDOM.render(
   <React.StrictMode>
