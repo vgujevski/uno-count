@@ -32,11 +32,11 @@ export const PlayerPage = () => {
     <div>
       <div className="top_bar">
         <div className="top_bar-content">
-          <button className="button button__icon" onClick={handleBackClick}>
+          <button className="button dark button__icon" onClick={handleBackClick}>
             <img src={backIcon} alt="add player" />
           </button>
           <div className="top_bar-name">{playerName}</div>
-          <div className="button top_bar-blank" onClick={handleDeletePlayerClick}>
+          <div className="button dark top_bar-blank" onClick={handleDeletePlayerClick}>
             <img src={deleteIcon} alt="remove player" />
           </div>
         </div>
