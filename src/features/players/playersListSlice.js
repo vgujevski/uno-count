@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { calcTotalPoints } from '../../utility/util'
 
 const initialState = []
 
@@ -21,13 +22,19 @@ const playersSlice = createSlice({
     },
     playerScoreRemoved(state, action) {
       const player = state.find(player => player.playerScores.find(score => score.scoreId === action.payload.scoreId) != null)
-      if(player){
-        player.playerScores = player.playerScores.filter(score => score.scoreId !== action.payload.scoreId) 
+      if (player) {
+        player.playerScores = player.playerScores.filter(score => score.scoreId !== action.payload.scoreId)
       }
     }
   }
 })
 
 export const { playerAdded, playerRemoved, playerScoreAdded, playerScoreRemoved } = playersSlice.actions
+
+export const selectPlayersSortedDesc = (state) => {
+  return state.players
+    .slice()
+    .sort((a, b) => calcTotalPoints(b.playerScores) - calcTotalPoints(a.playerScores))
+}
 
 export default playersSlice.reducer

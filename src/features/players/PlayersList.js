@@ -4,12 +4,13 @@ import { AddEditPlayer } from './AddEditPlayer'
 import { Player } from './Player'
 
 import plusIcon from '../../images/add_white_48dp.svg'
+import { selectPlayersSortedDesc } from './playersListSlice'
 
 export const PlayersList = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false)
 
-  const players = useSelector(state => state.players)
+  const players = useSelector(selectPlayersSortedDesc)
 
   const openModal = () => {
     setIsOpen(true)
