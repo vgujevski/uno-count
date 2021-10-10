@@ -28,7 +28,7 @@ export const PlayersList = () => {
     <div className="list">
       <div className="top_bar">
         <div className="top_bar-content">
-          <button className="button button__add-player" onClick={handleAddPlayer}>
+          <button className="button dark button__add-player" onClick={handleAddPlayer}>
             <img src={plusIcon} alt="add player" />
           </button>
         </div>

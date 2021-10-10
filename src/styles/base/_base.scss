@@ -5,6 +5,7 @@
 // applied to all tags
 html {
   font-size: 62.5%;
+  color: $text-light-color;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
   margin: 0;
   font-size: $m-size;
   line-height: 1.6;
-  background: $bg-light;
+  background: $bg-dark;
 }
 
 h1 {
