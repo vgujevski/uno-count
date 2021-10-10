@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { AddScore } from './AddScore'
 import { calcTotalPoints } from '../../utility/util'
 
-import plusIcon from '../../images/add_black_48dp.svg'
+import plusIcon from '../../images/add_white_48dp.svg'
 
 export const Player = (player) => {
 
